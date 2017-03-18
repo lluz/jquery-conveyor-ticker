@@ -5,10 +5,13 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON("package.json"),
         
         proj_name: 'jConveyorTicker',
+        proj_codename: 'jquery-conveyor-ticker',
 
         dirs: {
+            dist_folder: 'dist',
             js_dist_folder: 'dist/js',
-            css_dist_folder: 'dist/css'
+            css_dist_folder: 'dist/css',
+            dl_folder: 'dl'
         },
 
         uglify : {
@@ -57,6 +60,22 @@ module.exports = function(grunt) {
             options: {
                 jshintrc: ".jshintrc"
             }
+        },
+
+        compress: {
+            main: {
+                options: {
+                    archive: '<%= dirs.dl_folder %>/<%= proj_name %>.zip'
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.dist_folder %>/',
+                        src: ['**'],
+                        dest: '<%= proj_codename %>/'
+                    }
+                ]
+            }
         }
     });
 
@@ -64,7 +83,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-
+    grunt.loadNpmTasks('grunt-contrib-compress');
+    
+    grunt.registerTask("zip_dist", [
+        "compress"
+    ]);
     grunt.registerTask("minify_js", [
         "jshint",
         "uglify"
