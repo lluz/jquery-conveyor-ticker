@@ -1,0 +1,37 @@
+{
+  "name": "jquery-conveyor-ticker",
+  "version": "1.0.0",
+  "description": "jConveyorTicker - jQuery plugin to create simple horizontal conveyor belt animated tickers.",
+  "author": "Copyright (c) 2017 Luis Luz - UXD Lda <dev@uxd.pt>",
+  "license": "MIT",
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lluz/jquery-conveyor-ticker.git"
+  },
+  "homepage": "https://github.com/lluz/jquery-conveyor-ticker",
+  "bugs": {
+    "url": "https://github.com/lluz/jquery-conveyor-ticker/issues"
+  },
+  "main": "dist/js/jquery.jConveyorTicker.js",
+  "files": [
+    "dist/js/jquery.jConveyorTicker.js"
+  ],
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "lite-server": "^2.3.0"
+  },
+  "scripts": {
+    "dev_start": "concurrent \"grunt\"",
+    "server_start": "concurrent \"grunt\" \"lite-server\"",
+    "kill_all_node_processes": "TASKKILL /F /IM node.exe"
+  }
+}

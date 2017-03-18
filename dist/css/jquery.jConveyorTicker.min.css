@@ -1,0 +1,15 @@
+/*!
+ * jConveyorTicker
+ * Description: jQuery plugin to create simple horizontal conveyor belt animated tickers.
+ *
+ * Copyright (c) 2017 Luis Luz - UXD Lda
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Project home:
+ *   https://github.com/lluz/jquery-conveyor-ticker
+ *
+ * Version:  1.0.0
+ *
+ */.jconvtick-wrapper *{box-sizing:border-box;background:olive}

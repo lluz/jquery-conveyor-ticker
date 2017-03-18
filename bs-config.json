@@ -1,0 +1,10 @@
+{
+  "port": 7777,
+  "server": {
+    "baseDir": "./dist"
+  },
+  "codeSync": false,
+  "ghostMode": false,
+  "open": false,
+  "notify": false
+}
