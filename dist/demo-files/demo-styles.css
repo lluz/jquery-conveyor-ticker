@@ -177,3 +177,12 @@ textarea:focus{
   font-size: 22px;
   font-weight: bold;
 }
+
+.d-demo-wrap{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+[class*="js-conveyor-"] ul{
+  opacity: 0;
+}

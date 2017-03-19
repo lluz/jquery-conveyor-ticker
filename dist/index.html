@@ -66,7 +66,7 @@
 
 
 
-          <nav class="js-conveyor-1">
+          <div class="js-conveyor-1">
             <ul>
               <li>
                 <a href="#">
@@ -124,70 +124,77 @@
                 </a>
               </li>
             </ul>
-          </nav>
+          </div>
 
           <hr />
 
+          <div class="d-demo-wrap">
 
-          <nav class="js-conveyor-1">
-            <ul>
-              <li>
-                <a href="#">
-                  <span>ZZZZZZZZZZZZZZZZZZZZZ</span>
-                  <strong>
-                    <b>3</b>
-                    <em></em>
-                    <b>0</b>
-                  </strong>
-                  <span>uuuuuuuuuuuuuuuuuuuuuuuuuuu</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span>Benfica</span>
-                  <strong>
-                    <b>3</b>
-                    <em></em>
-                    <b>0</b>
-                  </strong>
-                  <span>FC Porto</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span>Sporting Braga</span>
-                  <strong>
-                    <b>3</b>
-                    <em></em>
-                    <b>0</b>
-                  </strong>
-                  <span>XXXXXX</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span>Académica Coimbra</span>
-                  <strong>
-                    <b>3</b>
-                    <em></em>
-                    <b>0</b>
-                  </strong>
-                  <span>Lousada</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span>XXXXXXX</span>
-                  <strong>
-                    <b>3</b>
-                    <em></em>
-                    <b>0</b>
-                  </strong>
-                  <span>Defensores de Chaves</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+            <div class="jctkr-label">
+              <strong>News</strong>
+            </div>
+            <div class="js-conveyor-1">
+              <ul>
+                <li>
+                  <a href="#">
+                    <span>ZZZZZZZZZZZZZZZZZZZZZ</span>
+                    <strong>
+                      <b>3</b>
+                      <em></em>
+                      <b>0</b>
+                    </strong>
+                    <span>uuuuuuuuuuuuuuuuuuuuuuuuuuu</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Benfica</span>
+                    <strong>
+                      <b>3</b>
+                      <em></em>
+                      <b>0</b>
+                    </strong>
+                    <span>FC Porto</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Sporting Braga</span>
+                    <strong>
+                      <b>3</b>
+                      <em></em>
+                      <b>0</b>
+                    </strong>
+                    <span>XXXXXX</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Académica Coimbra</span>
+                    <strong>
+                      <b>3</b>
+                      <em></em>
+                      <b>0</b>
+                    </strong>
+                    <span>Lousada</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>XXXXXXX</span>
+                    <strong>
+                      <b>3</b>
+                      <em></em>
+                      <b>0</b>
+                    </strong>
+                    <span>Defensores de Chaves</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+            
 
 
 
@@ -229,11 +236,15 @@
 
     /*! Default options:
      *  
-     *  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx: false
+     *  anim_duration: 150
+     *  reverse_elm: false
      * 
      */
 
-    $('.js-conveyor-1').jConveyorTicker();
+    $('.js-conveyor-1').jConveyorTicker({
+      anim_duration: 200,
+      reverse_elm: true
+    });
 
   });
   </script>
@@ -243,10 +254,10 @@
   $(function() {
 
     // email protection
-    if ( $('.d-js-eaddress').length ) {
-      var mAddress = $('.d-js-eaddress').html().replace('--at--','@').replace('--dot--','.');
-      jQuery('.d-js-eaddress').html(mAddress).attr('href', 'mailto:' + mAddress);
-    }
+    $('.d-js-eaddress').each(function(){
+      var mAddress = $(this).html().replace('--at--','@').replace('--dot--','.');
+      $(this).html(mAddress).attr('href', 'mailto:' + mAddress);
+    });
     
   });
   </script>
