@@ -33,6 +33,7 @@
   "scripts": {
     "dev_start": "concurrent \"grunt\"",
     "server_start": "concurrent \"grunt\" \"lite-server\"",
+    "compress_dist": "concurrent \"grunt zip_dist\"",
     "kill_all_node_processes": "TASKKILL /F /IM node.exe"
   }
 }

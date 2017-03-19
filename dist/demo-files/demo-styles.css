@@ -55,7 +55,7 @@ textarea:focus{
 .d-wrap > header > .d-i{
   max-width: 980px;
   margin: 0 auto;
-  padding: 70px 20px;
+  padding: 70px 20px 45px 20px;
 }
 .d-wrap > header h1{
   margin: 0;
@@ -68,6 +68,33 @@ textarea:focus{
   font-size: 18px;
   font-weight: 400;
   color: #88a4c7;
+}
+.d-wrap > header .d-func-name{
+  margin: 10px 0 0 0;
+  font-size: 22px;
+}
+.d-wrap .d-dl-btn{
+  margin: 25px 0 0 0;
+}
+.d-wrap .d-dl-btn a{
+  display: inline-block;
+  padding: 9px 15px 6px 15px;
+  background-color: transparent;
+  border: 1px solid #e8ebfd;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  transition: background-color 0.3s, color 0.3s;
+}
+.d-wrap .d-dl-btn a:hover,
+.d-wrap .d-dl-btn a:focus{
+  text-decoration: none;
+  background-color: #fff;
+  border-color: #fff;
+  color: #454e8c;
 }
 .d-wrap > main{
   flex-grow:1;

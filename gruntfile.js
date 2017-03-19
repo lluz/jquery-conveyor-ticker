@@ -4,7 +4,8 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
         
-        proj_name: 'jConveyorTicker',
+        proj_name: 'jQuery Conveyor Ticker',
+        proj_funcname: 'jConveyorTicker',
         proj_codename: 'jquery-conveyor-ticker',
 
         dirs: {
@@ -16,11 +17,11 @@ module.exports = function(grunt) {
 
         uglify : {
             options: {
-                banner: "/*! <%= proj_name %> v<%= pkg.version %> - Licensed under the <%= pkg.license %> license - <%= pkg.author %> / Project home: <%= pkg.homepage %> */\n"
+                banner: "/*! <%= proj_name %> (<%= proj_funcname %>) v<%= pkg.version %> - Licensed under the <%= pkg.license %> license - <%= pkg.author %> / Project home: <%= pkg.homepage %> */\n"
             },
             target: {
                 files: {
-                    "<%= dirs.js_dist_folder %>/jquery.<%= proj_name %>.min.js" : "<%= dirs.js_dist_folder %>/jquery.<%= proj_name %>.js"
+                    "<%= dirs.js_dist_folder %>/jquery.<%= proj_funcname %>.min.js" : "<%= dirs.js_dist_folder %>/jquery.<%= proj_funcname %>.js"
                 }
             }
         },
@@ -29,7 +30,7 @@ module.exports = function(grunt) {
             options: {},
             target: {
                 files: {
-                    '<%= dirs.css_dist_folder %>/jquery.<%= proj_name %>.min.css': ['<%= dirs.css_dist_folder %>/jquery.<%= proj_name %>.css']
+                    '<%= dirs.css_dist_folder %>/jquery.<%= proj_funcname %>.min.css': ['<%= dirs.css_dist_folder %>/jquery.<%= proj_funcname %>.css']
                 }
             }
         },
@@ -41,13 +42,13 @@ module.exports = function(grunt) {
             },
             js: {
                 files: [
-                    "<%= dirs.js_dist_folder %>/jquery.<%= proj_name %>.js"
+                    "<%= dirs.js_dist_folder %>/jquery.<%= proj_funcname %>.js"
                 ],
                 tasks: ["minify_js"]
             },
             css: {
                 files: [
-                    "<%= dirs.css_dist_folder %>/jquery.<%= proj_name %>.css"
+                    "<%= dirs.css_dist_folder %>/jquery.<%= proj_funcname %>.css"
                 ],
                 tasks: ["minify_css"]
             }
@@ -55,7 +56,7 @@ module.exports = function(grunt) {
         
         jshint: {
             files: [
-                "<%= dirs.js_dist_folder %>/jquery.<%= proj_name %>.js"
+                "<%= dirs.js_dist_folder %>/jquery.<%= proj_funcname %>.js"
             ],
             options: {
                 jshintrc: ".jshintrc"
@@ -65,7 +66,7 @@ module.exports = function(grunt) {
         compress: {
             main: {
                 options: {
-                    archive: '<%= dirs.dl_folder %>/<%= proj_name %>.zip'
+                    archive: '<%= dirs.dl_folder %>/<%= proj_funcname %>.zip'
                 },
                 files: [
                     {

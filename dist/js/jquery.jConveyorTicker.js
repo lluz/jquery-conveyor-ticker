@@ -1,5 +1,5 @@
 /*!
- * jConveyorTicker
+ * jQuery Conveyor Ticker (jConveyorTicker)
  * Description: jQuery plugin to create simple horizontal conveyor belt animated tickers.
  *
  * Copyright (c) 2017 Luis Luz - UXD Lda
