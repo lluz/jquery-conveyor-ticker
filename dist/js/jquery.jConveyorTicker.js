@@ -22,25 +22,19 @@
             return false;
         }
 
-        var cycle_duration;
-        var reverse_commute;
         var settings = {
-            anim_duration: 150,
+            anim_duration: 200,
             reverse_elm: false
         };
+        var cycle_duration = settings.anim_duration;
+        var reverse_commute = settings.reverse_elm;
         
         if (options) {
-            if ( options.anim_duration === undefined ) {
-                cycle_duration = settings.anim_duration;
-            }
-            else {
+            if ( options.anim_duration !== undefined ) {
                 cycle_duration = options.anim_duration;
             }
 
-            if ( options.reverse_elm === undefined ) {
-                reverse_commute = settings.reverse_elm;
-            }
-            else {
+            if ( options.reverse_elm !== undefined ) {
                 reverse_commute = options.reverse_elm;
             }
 
@@ -99,7 +93,7 @@
                     $list.stop();
                 }, function(){
                     $list.stop();
-                    conveyorAnimate('');
+                    conveyorAnimate('normal');
                 });
 
                 if ( reverse_commute ){

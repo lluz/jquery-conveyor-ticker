@@ -209,7 +209,30 @@ textarea:focus{
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
+  font-size: 0;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: inset 0 0 7px rgba(69, 78, 140,0.5);
+}
+.d-demo-wrap .jctkr-label{
+  height: 35px;
+  padding: 0 17px;
+  line-height: 42px;
+  background: rgba(69, 78, 140,0.7);
+  font-style: italic;
+  font-size: 19px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(69, 78, 140,1);
+  cursor: default;
+}
+.d-demo-wrap .jctkr-label:hover{
+  background: rgba(69, 78, 140,0.9);
 }
 [class*="js-conveyor-"] ul{
   opacity: 0;
+}
+[class*="js-conveyor-"] ul li{
+  padding: 0 15px;
+  line-height: 35px;
+  font-size: 16px;
 }
