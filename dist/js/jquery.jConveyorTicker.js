@@ -18,7 +18,7 @@
 
     $.fn.jConveyorTicker = function(options) {
         if ( this === undefined || this.length === 0 ) {
-            console.log('jQuery.jConveyorTicker() INITIALIZATION ERROR: You need to select one or more elements. See documentation form more information.');
+            console.log('jquery.jConveyorTicker() INITIALIZATION ERROR: You need to select one or more elements. See documentation form more information.');
             return false;
         }
 

@@ -4,7 +4,7 @@
 
 A jQuery plugin to create simple horizontal conveyor belt animated tickers.
 
-Visit the project's page [project page](https://lluz.github.io/jQuery.jConveyorTicker/) to read the documentation and see the demos.
+Visit the project's page [project page](https://lluz.github.io/jquery.jConveyorTicker/) to read the documentation and see the demos.
 
 ## Browser support
 
