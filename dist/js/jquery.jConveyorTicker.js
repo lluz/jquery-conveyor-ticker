@@ -10,7 +10,7 @@
  * Project home:
  *   https://github.com/lluz/jquery-conveyor-ticker
  *
- * Version:  1.0.0
+ * Version:  1.0.1
  *
  */
 
@@ -44,10 +44,33 @@
         this.each(function(){
             var $wrap = $(this);
             var $list = $wrap.children('ul');
+
+            $list
+            .css({
+                'margin': '0',
+                'padding': '0',
+                'list-style': 'none'
+            })
+            .children('li')
+            .css({
+                'display': 'inline-block'
+            });
+
+            var $listRawWidth = $list.width();
+            var $parentWidth = $list.parent().width();
+            var $parent1stThreshold = ($parentWidth / 2) - 20;
+
+            $list
+            .removeAttr('style')
+            .children('li')
+            .removeAttr('style');
+
             $wrap.addClass('jctkr-wrapper');
-            if ( $list.width() >= ($list.parent().width() - 20) ){
-                var $listItemsClone = $list.clone().children('li');
-                $list.append($listItemsClone);
+
+            if ( $listRawWidth >= $parent1stThreshold ){
+                var $listItems1stClone = $list.clone().children('li');
+                $list.append($listItems1stClone);
+
                 var listTotalWidth = 0;
                 $list.children().each(function(){
                     listTotalWidth += $(this).outerWidth();

@@ -1,6 +1,6 @@
 {
   "name": "jquery-conveyor-ticker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "jConveyorTicker - jQuery plugin to create simple horizontal conveyor belt animated tickers.",
   "author": "Copyright (c) 2017 Luis Luz - UXD Lda <dev@uxd.pt>",
   "license": "MIT",

@@ -229,7 +229,8 @@ textarea:focus{
   background: rgba(69, 78, 140,0.9);
 }
 [class*="js-conveyor-"] ul{
-  opacity: 0;
+  display: inline-block;
+  opacity: 0.5;
 }
 [class*="js-conveyor-"] ul li{
   padding: 0 15px;
