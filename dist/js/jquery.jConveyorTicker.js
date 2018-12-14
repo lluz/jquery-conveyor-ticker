@@ -10,7 +10,7 @@
  * Project home:
  *   https://github.com/lluz/jquery-conveyor-ticker
  *
- * Version:  1.0.1
+ * Version:  1.0.2
  *
  */
 
@@ -24,10 +24,12 @@
 
         var settings = {
             anim_duration: 200,
-            reverse_elm: false
+            reverse_elm: false,
+            force_loop: false
         };
         var cycle_duration = settings.anim_duration;
         var reverse_commute = settings.reverse_elm;
+        var initialization_forced = settings.force_loop;
         
         if (options) {
             if ( options.anim_duration !== undefined ) {
@@ -36,6 +38,10 @@
 
             if ( options.reverse_elm !== undefined ) {
                 reverse_commute = options.reverse_elm;
+            }
+
+            if ( options.force_loop !== undefined ) {
+                initialization_forced = options.force_loop;
             }
 
             $.extend(settings, options);
@@ -67,7 +73,7 @@
 
             $wrap.addClass('jctkr-wrapper');
 
-            if ( $listRawWidth >= $parent1stThreshold ){
+            var conveyorInit = function(){
                 var $listItems1stClone = $list.clone().children('li');
                 $list.append($listItems1stClone);
 
@@ -132,6 +138,38 @@
                     });
                 }
                 conveyorAnimate('normal');
+            };
+
+            if ( $listRawWidth >= $parent1stThreshold ){
+                conveyorInit();
+            }
+            else if ( initialization_forced ){
+                var $itemsWidth, $containerWidth = 0;
+                var itemsReplicate = function(){
+                    var $listItems1stClone = $list.clone().children('li');
+                    $list.append($listItems1stClone);
+
+                    $itemsWidth = $list.width();
+                    $containerWidth = $list.parent().width();
+
+                    if ( $itemsWidth < $containerWidth ){
+                        itemsReplicate();
+                    }
+                    else {
+                        conveyorInit();
+                        return false;
+                    }
+                };
+
+                itemsReplicate();
+
+                while ( $itemsWidth < $containerWidth ) {
+                    if ( $itemsWidth >= $parent1stThreshold ) {
+                        conveyorInit();
+                        break;
+                    }
+                    itemsReplicate();
+                }
             }
             $wrap.addClass('jctkr-initialized');
         });

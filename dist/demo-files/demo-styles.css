@@ -177,19 +177,23 @@ textarea:focus{
 }
 
 .d-tip-1{
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 15px;
-  padding: 0 10px 0 0;
   background: #e8ebfd;
   line-height: 1;
 }
-.d-tip-1 > strong:first-child{
-  display: inline-block;
-  margin: 0 10px 0 0;
+.d-tip-1 > strong:first-of-type{
+  flex: 0 0 auto;
   padding: 5px 10px 7px 10px;
   background: #454e8c;
   color: #fff;
   font-family: 'Lato', sans-serif;
   font-weight: 900;
+}
+.d-tip-1 > span{
+  flex: 1 1 auto;
+  padding: 5px 10px 5px 10px;
 }
 
 .d-playbox{

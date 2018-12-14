@@ -26,10 +26,10 @@
   <meta name="keywords" content="jQuery, conveyor belt, news ticker, animated ticker" />
   
   <!-- Plugin styles -->
-  <link type="text/css" rel="stylesheet" href="css/jquery.jConveyorTicker.min.css?v=1.0.1" />
+  <link type="text/css" rel="stylesheet" href="css/jquery.jConveyorTicker.min.css?v=1.0.2" />
 
   <!-- Demo styles -->
-  <link type="text/css" rel="stylesheet" href="demo-files/demo-styles.css?v=1.0.1" />
+  <link type="text/css" rel="stylesheet" href="demo-files/demo-styles.css?v=1.0.2" />
 
 </head>
 <body>
@@ -190,6 +190,35 @@
 
           </aside>
 
+          <h3>Demo 4 <span>. force loop</span></h3>
+
+          <p class="d-tip-1">
+            <strong>Tip!</strong>
+            <span>
+              Option set to force loop when the aggregated width of the items is smaller than the width of the frame.
+            </span>
+          </p>
+
+          <aside class="d-playbox">
+            
+            <!-- DEMO begin -->
+            <div class="d-demo-wrap">
+
+              <!-- Plugin HTML begin -->
+              <div class="js-conveyor-4">
+                <ul>
+                  <li>
+                    <span>Too small to init? Not anymore!</span>
+                  </li>
+                </ul>
+              </div>
+              <!-- Plugin HTML end -->
+
+            </div>
+            <!-- DEMO end -->
+
+          </aside>
+
           <h3>How to use</h3>
 
           <p>
@@ -259,6 +288,7 @@
     $('.js-conveyor-1').jConveyorTicker({
       anim_duration:   200,    // Specify the time (in milliseconds) the animation takes to move 10 pixels
       reverse_elm:     false   // Enable the use of the reverse animation trigger HTML element
+      force_loop:      false   // Force the initialization even if the items are too small in total width
     });
   });
 &lt;/script&gt;
@@ -311,7 +341,7 @@
   <script src="demo-files/run_prettify.js"></script>
 
   <!-- jConveyorTicker plugin -->
-  <script src="js/jquery.jConveyorTicker.min.js?v=1.0.1"></script>
+  <script src="js/jquery.jConveyorTicker.min.js?v=1.0.2"></script>
 
   <script type="text/javascript" charset="utf-8">
   $(function() {
@@ -331,6 +361,10 @@
 
     $('.js-conveyor-3').jConveyorTicker({
       reverse_elm: true
+    });
+
+    $('.js-conveyor-4').jConveyorTicker({
+      force_loop: true
     });
 
   });
