@@ -16,6 +16,6 @@
 
 
 #### Version 1.0.2
-###### 2018-12-14
+###### 2018-12-18
 
 * Added option to force loop when the aggregated width of the items is smaller than the width of the frame.
