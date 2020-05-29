@@ -10,7 +10,7 @@
  * Project home:
  *   https://github.com/lluz/jquery-conveyor-ticker
  *
- * Version:  1.0.2
+ * Version:  1.1.0
  *
  */
  
@@ -36,6 +36,7 @@
   list-style: none;
   white-space: nowrap;
   font-size: 0;
+  text-align: left;
   opacity: 0;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;

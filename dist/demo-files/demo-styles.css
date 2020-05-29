@@ -208,6 +208,11 @@ textarea:focus{
   font-size: 22px;
   font-weight: bold;
 }
+.d-playbox-buttons{
+  padding: 20px 0 0 0;
+  font-size: 16px;
+  text-align: center;
+}
 
 .d-demo-wrap{
   width: 100%;

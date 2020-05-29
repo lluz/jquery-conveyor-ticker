@@ -26,10 +26,10 @@
   <meta name="keywords" content="jQuery, conveyor belt, news ticker, animated ticker" />
   
   <!-- Plugin styles -->
-  <link type="text/css" rel="stylesheet" href="css/jquery.jConveyorTicker.min.css?v=1.0.2" />
+  <link type="text/css" rel="stylesheet" href="css/jquery.jConveyorTicker.min.css?v=1.1.0" />
 
   <!-- Demo styles -->
-  <link type="text/css" rel="stylesheet" href="demo-files/demo-styles.css?v=1.0.2" />
+  <link type="text/css" rel="stylesheet" href="demo-files/demo-styles.css?v=1.1.0" />
 
 </head>
 <body>
@@ -219,6 +219,50 @@
 
           </aside>
 
+          <h3>Demo 5 <span>. start paused + calling Play / Pause</span></h3>
+
+          <p class="d-tip-1">
+            <strong>Tip!</strong>
+            <span>
+              Option to initialize in a paused state. Use buttons below to call the play and pause methods.
+            </span>
+          </p>
+
+          <aside class="d-playbox">
+            
+            <!-- DEMO begin -->
+            <div class="d-demo-wrap">
+
+              <!-- Plugin HTML begin -->
+              <div class="js-conveyor-5">
+                <ul>
+                  <li>
+                    <span>I am an <u>innocent</u> text string just passing by</span>
+                  </li>
+                  <li>
+                    <a href="https://duckduckgo.com/">
+                      <span>I am a <b>hyperlink</b></span>
+                    </a>
+                  </li>
+                  <li>
+                    <span>Mauris interdum elit non sapien <em>imperdiet</em></span>
+                  </li>
+                  <li>
+                    <span>Cras lorem augue facilisis a commodo</span>
+                  </li>
+                </ul>
+              </div>
+              <!-- Plugin HTML end -->
+
+            </div>
+            <div class="d-playbox-buttons">
+              <button onclick="jsConveyor5.playAnim()">Play</button>
+              <button onclick="jsConveyor5.pauseAnim()">Pause</button>
+            </div>
+            <!-- DEMO end -->
+
+          </aside>
+
           <h3>How to use</h3>
 
           <p>
@@ -289,6 +333,7 @@
       anim_duration:   200,    // Specify the time (in milliseconds) the animation takes to move 10 pixels
       reverse_elm:     false   // Enable the use of the reverse animation trigger HTML element
       force_loop:      false   // Force the initialization even if the items are too small in total width
+      start_paused:    false   // Initialize in a paused state
     });
   });
 &lt;/script&gt;
@@ -309,6 +354,45 @@
 &lt;/div&gt;
 </pre>
 
+          <p>
+            On demand call for the play and paused states, as well as reset methods.
+          </p>
+
+<pre class="prettyprint">
+&lt;script&gt;
+  $(function() {
+    window.jsConveyor1 = $('.js-conveyor-1').jConveyorTicker();
+
+    ... ...
+
+    jsConveyor1.playAnim();    // Play the ticker's scrolling
+    jsConveyor1.pauseAnim();   // Pause the ticker's scrolling
+
+    ... ...
+
+    jsConveyor1.init();        // On demand reinitialization after changes to the elements 
+                               // (e.g. responsive 'font-size' or list contents)
+    ... ...
+
+    jsConveyor1.destroy();     // Resets the element to its original state
+
+    ... ...
+
+  });
+&lt;/script&gt;
+</pre>
+
+
+
+          <h3>Notes</h3>
+
+          <p>
+            This plugin as a limited capacity to calculate the measurements of the text elements if a non-system based font is used, due to latency issues that you may find on your development environment while loading the font.
+          </p>
+          <p>
+            For better results use absolute "font-size" CSS styles (e.g. 'px') on the ticker's text items, or call the ticker's init method whenever there is a responsive change on the font-size of those elements, so the plugin can be reapplied.
+          </p>
+
 
 
           <h3>Final thoughts</h3>
@@ -324,7 +408,7 @@
 
     <footer>
       <div class="d-i">
-        Copyright &copy; 2017 <a href="https://www.linkedin.com/in/luisluz/" target="_blank">Luis Luz</a> - <a href="http://www.uxd.pt" target="_blank">UXD Lda</a>
+        Copyright &copy; 2017-2020 <a href="https://www.linkedin.com/in/luisluz/" target="_blank">Luis Luz</a> - <a href="http://www.uxd.pt" target="_blank">UXD Lda</a>
       </div>
     </footer>
 
@@ -341,15 +425,17 @@
   <script src="demo-files/run_prettify.js"></script>
 
   <!-- jConveyorTicker plugin -->
-  <script src="js/jquery.jConveyorTicker.min.js?v=1.0.2"></script>
+  <script src="js/jquery.jConveyorTicker.min.js?v=1.1.0"></script>
 
   <script type="text/javascript" charset="utf-8">
   $(function() {
 
     /*! Default options:
      *  
-     *  anim_duration: 200
-     *  reverse_elm: false
+     *  anim_duration:  200
+     *  reverse_elm:    false
+     *  force_loop:     false
+     *  start_paused:   false
      * 
      */
 
@@ -365,6 +451,10 @@
 
     $('.js-conveyor-4').jConveyorTicker({
       force_loop: true
+    });
+    
+    window.jsConveyor5 = $('.js-conveyor-5').jConveyorTicker({
+      start_paused: true
     });
 
   });

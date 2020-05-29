@@ -19,3 +19,12 @@
 ###### 2018-12-18
 
 * Added option to force loop when the aggregated width of the items is smaller than the width of the frame.
+
+
+
+#### Version 1.1.0
+###### 2020-05-29
+
+* Refactored to have public methods.
+* New methods 'pauseAnim', 'playAnim', 'init' and 'destroy'
+* New option 'start_paused' to inititalize in a paused state.
