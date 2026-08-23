@@ -1,8 +1,8 @@
 {
   "name": "jquery-conveyor-ticker",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "jConveyorTicker - jQuery plugin to create simple horizontal conveyor belt animated tickers.",
-  "author": "Copyright (c) 2017 Luis Luz - UXD Lda <dev@uxd.pt>",
+  "author": "Copyright (c) 2017-2026 Luis Luz - UXD Lda <dev@uxd.pt>",
   "license": "MIT",
   "keywords": [
     "jquery-plugin",
@@ -21,19 +21,17 @@
     "dist/js/jquery.jConveyorTicker.js"
   ],
   "devDependencies": {
-    "concurrently": "^3.4.0",
-    "grunt": "^1.4.0",
-    "grunt-contrib-compress": "^2.0.0",
-    "grunt-contrib-cssmin": "^2.0.0",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-uglify": "^2.2.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "lite-server": "^2.6.1"
+    "adm-zip": "^0.6.0",
+    "concurrently": "^9.1.2",
+    "esbuild": "^0.25.0",
+    "serve": "^14.2.4"
   },
   "scripts": {
-    "dev_start": "concurrent \"grunt\"",
-    "server_start": "concurrent \"grunt\" \"lite-server\"",
-    "compress_dist": "concurrent \"grunt zip_dist\"",
-    "kill_all_node_processes": "TASKKILL /F /IM node.exe"
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "esbuild dist/js/jquery.jConveyorTicker.js --minify --legal-comments=inline --outfile=dist/js/jquery.jConveyorTicker.min.js",
+    "build:css": "esbuild dist/css/jquery.jConveyorTicker.css --minify --outfile=dist/css/jquery.jConveyorTicker.min.css",
+    "dev_start": "concurrently \"npm run build:js -- --watch\" \"npm run build:css -- --watch\"",
+    "server_start": "concurrently \"npm run dev_start\" \"serve dist -l 7777 --no-clipboard\"",
+    "compress_dist": "node scripts/compress-dist.mjs"
   }
 }

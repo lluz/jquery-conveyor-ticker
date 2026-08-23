@@ -1,5 +1,9 @@
 ## Changelog
 
+#### v1.2.0
+
+* Upgraded packages and dist compression methods
+
 
 #### v1.1.0
 
